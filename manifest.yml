@@ -6,7 +6,7 @@ applications:
   memory: 1G
   disk_quota: 1G
   routes:
-  - route: prometheus-dluhc-core.apps.internal
+  - route: funding-service-design-prometheus.apps.internal
   services:
   - prometheus-influxdb
 
@@ -16,7 +16,7 @@ applications:
   instances: 1
   memory: 100M
   routes:
-  - route: prometheus-exporter-dluhc-core.apps.internal
+  - route: funding-service-design-prometheus-exporter.apps.internal
   env:
     GOPACKAGENAME: github.com/alphagov/paas-prometheus-exporter
 
@@ -26,7 +26,7 @@ applications:
   instances: 1
   memory: 512M
   env:
-    GF_SERVER_ROOT_URL: https://grafana-dluhc-core.london.cloudapps.digital
+    GF_SERVER_ROOT_URL: https://funding-service-design-grafana.london.cloudapps.digital
     GF_SERVER_HTTP_ADDR: "0.0.0.0"
     GF_DATABASE_SSL_MODE: "require"
     GF_ALERTING_ENABLED: true
@@ -38,6 +38,6 @@ applications:
     export GF_SECURITY_ADMIN_PASSWORD="${GRAFANA_ADMIN_PASSWORD}" &&
     /run.sh
   routes:
-    - route: grafana-dluhc-core.london.cloudapps.digital
+    - route: funding-service-design-grafana.london.cloudapps.digital
   services:
     - grafana-db
