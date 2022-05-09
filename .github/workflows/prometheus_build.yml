@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 env:
   REGISTRY: ghcr.io
-  DOCKER_IMAGE: communitiesuk/dluhc-data-collection-monitoring/prometheus
+  DOCKER_IMAGE: communitiesuk/funding-service-design-data-collection-monitoring/prometheus
 
 jobs:
   build:
